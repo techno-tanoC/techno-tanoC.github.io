@@ -19,3 +19,6 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+# sample contents
+/src/content/posts/0000-00-00.md
