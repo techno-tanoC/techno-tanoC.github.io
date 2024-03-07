@@ -1,0 +1,24 @@
+---
+import type { GetStaticPathsOptions } from "astro"
+import { getCollection } from "astro:content"
+import BaseLayout from "../../layouts/BaseLayout.astro"
+
+export const getStaticPaths = async ({ paginate }: GetStaticPathsOptions) => {
+  const allPosts = await getCollection("posts")
+  return paginate(allPosts, { pageSize: 20 })
+}
+const title = "Posts"
+const { page } = Astro.props
+---
+
+<BaseLayout title={title}>
+  <ul>
+    {
+      page.data.map(post => (
+        <li>
+          <a href={`/posts/${post.slug}`}>{post.data.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>
