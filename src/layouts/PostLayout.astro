@@ -1,5 +1,6 @@
 ---
 import Header from "@components/Header.astro"
+import Footer from "@components/Footer.astro"
 
 const { frontmatter } = Astro.props
 ---
@@ -16,5 +17,6 @@ const { frontmatter } = Astro.props
     <Header />
     <h1>{ frontmatter.title }</h1>
     <slot />
+    <Footer />
   </body>
 </html>
