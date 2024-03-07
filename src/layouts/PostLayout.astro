@@ -13,10 +13,46 @@ const { frontmatter } = Astro.props
     <meta name="generator" content={Astro.generator} />
     <title>{frontmatter.title} - TanoC Blog</title>
   </head>
-  <body>
+  <style>
+    .body {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .main {
+      width: 100%;
+      max-width: 1024px;
+      margin: 0 auto;
+    }
+
+    .article {
+      margin: 8px;
+    }
+  </style>
+  <style is:global>
+    a {
+      color: #43a047;
+    }
+
+    pre {
+      padding: 8px;
+    }
+
+    :not(pre) > code {
+      padding: 0.125rem 0.25rem;
+      background: #f1f1f1;
+      border-radius: 0.25rem;
+    }
+  </style>
+  <body class="body">
     <Header />
-    <h1>{ frontmatter.title }</h1>
-    <slot />
+    <main class="main">
+      <article class="article">
+        <h1>{ frontmatter.title }</h1>
+        <slot />
+      </article>
+    </main>
     <Footer />
   </body>
 </html>

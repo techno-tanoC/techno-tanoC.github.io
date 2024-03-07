@@ -13,9 +13,29 @@ const { title } = Astro.props
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <style>
+    .body {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .main {
+      width: 100%;
+      max-width: 1024px;
+      margin: 0 auto;
+    }
+  </style>
+  <style is:global>
+    a {
+      color: #43A047;
+    }
+  </style>
+  <body class="body">
     <Header />
-    <slot />
+    <main class="main">
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>
