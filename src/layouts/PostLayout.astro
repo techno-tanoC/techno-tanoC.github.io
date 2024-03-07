@@ -1,4 +1,6 @@
 ---
+import Header from "@components/Header.astro"
+
 const { frontmatter } = Astro.props
 ---
 
@@ -11,8 +13,8 @@ const { frontmatter } = Astro.props
     <title>{frontmatter.title} - TanoC Blog</title>
   </head>
   <body>
+    <Header />
     <h1>{ frontmatter.title }</h1>
     <slot />
-    <a href="/posts/1">Posts</a>
   </body>
 </html>
