@@ -8,10 +8,24 @@ const { frontmatter } = Astro.props
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{frontmatter.title} - TanoC Blog</title>
+
+    <!--
+      https://favicon.io/favicon-generator/
+      Text: tc
+      Background: Rounded
+      Font Family: Noto Sans
+      Font Variant: Regular 400 Normal
+      Font Size: 110
+      Font Color: #FFFFFF
+      Background Color: #43A047
+    -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/favicons/site.webmanifest">
   </head>
   <style>
     .body {
