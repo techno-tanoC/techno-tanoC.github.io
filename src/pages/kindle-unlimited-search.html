@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>Kindle Unlimited Search</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <!--
+      https://favicon.io/favicon-generator/
+      Text: U
+      Background: Circle
+      Font Family: Noto Sans
+      Font Variant: Regular 400 Normal
+      Font Size: 110
+      Font Color: #EEE
+      Background Color: #555
+    -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/kindle-unlimited-search/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/kindle-unlimited-search/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/kindle-unlimited-search/favicon-16x16.png">
+    <link rel="manifest" href="/kindle-unlimited-search/site.webmanifest">
+
+    <style type="text/css">
+      html, body, article, main {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .header {
+        margin: 10px auto;
+        font-weight: 200;
+        white-space: nowrap;
+      }
+
+      .form {
+        display: flex;
+        justify-content: space-between;
+        max-width: 720px;
+        min-width: 300px;
+        width: 75%;
+        height: 64px;
+        margin: 0 auto;
+        border: 1px solid #DDD;
+        border-radius: 20px;
+        overflow: hidden;
+      }
+
+      .words {
+        flex-basis: auto;
+        flex-shrink: 1;
+        width: 100%;
+        padding: 20px 0 20px 20px;
+        font-weight: 500;
+        border: none;
+        outline: none;
+      }
+
+      .submit {
+        width: 96px;
+        height: 64px;
+        padding: 0;
+        cursor: pointer;
+        color: #DDD;
+        font-weight: 600;
+        background-color: #222;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <article>
+      <main class="container">
+        <h1 class="header">Kindle Unlimited Search</h1>
+        <form id="form" class="form" onsubmit="return search()">
+          <input type="search" id="words" class="words" autofocus>
+          <input type="submit" class="submit" value="search">
+        </form>
+      </main>
+    </article>
+
+    <script>
+      function search() {
+        const words = document.getElementById("words").value
+        const encoded = encodeURIComponent(words)
+        const url = `https://www.amazon.co.jp/s/ref=sr_nr_p_n_feature_nineteen_0?rh=n%3A2250738051%2Ck%3A${encoded}%2Cp_n_feature_nineteen_browse-bin%3A3169286051`
+        window.open(url)
+        return false
+      }
+    </script>
+  </body>
+</html>
